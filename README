@@ -1,0 +1,24 @@
+# Garmin Uploader
+
+Garmin Uploader is a Python application designed to backup your activities (as gpx files) to a Google Cloud Storage Bucket. 
+
+
+## Usage
+
+Create a service account in your GCP project with the Storage Admin role and download the json key locally as garmin-uploader.json [guide](https://cloud.google.com/storage/docs/reference/libraries#setting_up_authentication)
+
+Create a .env file with the following variables as strings:
+BUCKET => name of GCS bucket
+GARMIN_EMAIL => Garmin Connect email
+GARMIN_PW => Garmin Connect password
+GOOGLE_APPLICATION_CREDENTIALS="./garmin-uploader.json"
+
+python3 garmin_uploader.py
+
+## Roadmap
+
+I plan to iterate on this application and add functionality to run this as a Cloud Run service using Secrets Manager for additional security. Additionally, I plan to include a front end service to visualize the gpx files from the bucket. 
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
